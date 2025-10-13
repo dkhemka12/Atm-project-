@@ -3,7 +3,7 @@
 #  It includes input validation and limits the number of incorrect PIN attempts.
 
 # now we will initialize the variables
-
+name="Devansh khemka"
 # the attempts increase with wrong pin attempts
 attempts=0
 
@@ -20,8 +20,6 @@ pinlist = ['1234']
 
 print("Welcome to ATM")
 print("----------------")
-name=input("Please enter your name: ")
-
 # taking input of the pin
 pin=input("Enter the four digit pin: ")
 
@@ -34,7 +32,7 @@ for i in range(3):
         print("\nCorrect pin")
 
         # prints the number of stars equal to the length of the name except the last character
-        print("\nwelcome,", ("*" * (len(name) - 1)) + name[-1])
+        print("\nwelcome,", name)
 
         # if the pin is correct we will break the loop
         break
@@ -122,7 +120,6 @@ while True:
             elif amount > balance:
                 print("\nInsufficient balance.")
 
-            
             else:
                 # the withdrawn amount is subtracted from the balance
                 balance -= amount
@@ -142,6 +139,8 @@ while True:
                 # if the user inputs yes it will print the current balance
                 if check_balance == 'yes':
                     print(f"\nYour current balance is ₹{balance}")
+                else:
+                    pass
 
     # deposit cash
     elif choice == '3':
@@ -150,6 +149,7 @@ while True:
         # checks if the deposit amount is a valid number, if the amount is digit or not
         if depositamount.isdigit()==False:
             print("\nPlease enter a valid number.")
+
         else:
             amount = int(depositamount)
 
@@ -174,6 +174,8 @@ while True:
                 # if the user inputs yes it will print the current balance
                 if check_balance == 'yes':
                     print(f"\nYour current balance is ₹{balance}")
+                else:
+                    pass
 
     # change pin
     elif choice == '4':
@@ -217,10 +219,12 @@ while True:
         else:
             print("\nYour balance is ₹",balance)
             print("\nLast transactions:")
-            
+
+
             # to print the last 5 transactions we use slicing and a for loop
             for transaction in transactions[-1:-6:-1]:
                 print(transaction)
+            # continue to menu after listing
 
     # exit
     elif choice == '6':
