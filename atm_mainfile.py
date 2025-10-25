@@ -363,6 +363,7 @@ if attempts < 3:
 # -----------------------------------------------
 # Main ATM Menu Loop
 # -----------------------------------------------
+# this prints a main menu
 while True:
     print("\n================ MAIN MENU =================")
     print("1. CHECK BALANCE")
